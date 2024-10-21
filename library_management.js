@@ -42,3 +42,30 @@ class Section {
    }
 
 }
+
+// Task 3 Create a Patron Class
+class Patron {
+    constructor(name) {
+        this.name = name;
+        this.borrowedBooks = [];
+    }
+
+    borrowBook(book) {
+        if (book.isAvailable) {
+            book.isAvailable = false;
+            this.borrowedBooks.push(book);
+            console.log(`${this.name} borrowed ${book.title}`);
+        } else {
+            console.log(`${book.title} is not available.`);
+        }
+    }
+
+    returnBook(book) {
+        const bookIndex = this.borrowedBooks.indexOf(book);
+        if (bookIndex > -1) {
+            book.isAvailable = true;
+            this.borrowedBooks.splice(bookIndex, 1);
+            console.log(`${this.name} returned ${book.title}`);
+        }
+    }
+}
