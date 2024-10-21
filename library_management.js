@@ -84,3 +84,33 @@ class VIPPatron extends Patron {
         super.borrowBook(book);
     }
 }
+// Task 5 Handle Books Borrowing and Returning 
+// Use Example Sections
+const fiction = new Section("Fiction");
+const science = new Section("Science");
+
+// Use Example Books
+const book1 = new Book("1984", "George Orwell", "1234567890");
+const book2 = new Book("Brave New World", "Aldous Huxley", "0987654321");
+const book3 = new Book("The Selfish Gene", "Richard Dawkins", "1122334455");
+
+// Example Books to Sections
+fiction.addBook(book1);
+fiction.addBook(book2);
+science.addBook(book3);
+
+// Eample Patrons 
+const regularPatron = new Patron("John Doe");
+const vipPatron = new VIPPatron("Jane Smith", true);
+
+// Using Example
+regularPatron.borrowBook(book1);
+
+vipPatron.borrowBook(book1);
+
+regularPatron.returnBook(book1);
+
+fiction.listBooks();
+
+console.log(`Total available books in Fiction: ${fiction.getAvailableBooks()}`);
+console.log(`Total available books in Science: ${science.getAvailableBooks()}`);
