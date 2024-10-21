@@ -19,3 +19,26 @@ class Book{
         this._isAvailable = borrowed; //if false
     }
 }
+
+// Task 2 Create a Section Class 
+class Section {
+    constructor(name) {
+        this.name = name;
+        this.book = [];
+    }
+
+    addBook(book) {
+        this.books.push(book);
+    }
+
+    getAvailableBooks() {
+        return this.books.filter(book => book.isAvailable).length;
+    }
+
+    listBooks() {
+        this.books.forEach(book => {
+            console.log(`${book.title} - ${book.isAvailable ? "Available" : "Borrowed"}`);
+        });
+   }
+
+}
