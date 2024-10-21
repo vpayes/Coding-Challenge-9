@@ -114,3 +114,8 @@ fiction.listBooks();
 
 console.log(`Total available books in Fiction: ${fiction.getAvailableBooks()}`);
 console.log(`Total available books in Science: ${science.getAvailableBooks()}`);
+
+// Task 6 Create and Manage Sections and Patrons
+calculateTotalBooksAvailable() {
+    return this.getAvailableBooks();
+}
